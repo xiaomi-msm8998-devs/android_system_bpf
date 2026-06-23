@@ -328,14 +328,6 @@ const FILE_ARR: &[BpfFileDesc] = &[
         ],
         ..BPF_FILE_DESC_DEFAULT
     },
-    BpfFileDesc {
-        filename: "/system/etc/bpf/bpfRingbufProg.bpf",
-        critical: true,
-        skip_on_user: true,
-        maps: &[MapDesc::new(GID_ROOT, PERM_GRW, "test_ringbuf")],
-        progs: &[ProgDesc::new(GID_ROOT, "skfilter_ringbuf_test")],
-        ..BPF_FILE_DESC_DEFAULT
-    },
 ];
 
 #[cfg(target_arch = "x86_64")]
